@@ -4,12 +4,17 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'My Express API',
-      version: '1.0.0',
-      description: 'A simple Express API documented with Swagger',
-    }
+      title: 'Anime Viewer Plus API',
+      version: '0.1.0',
+      description: 'Express API for browsing anime, fetching episodes, streaming via free sources, and user interactions (comments, likes, tracking).',
+    },
+    tags: [
+      { name: 'Health', description: 'Service health and status' },
+      { name: 'Anime', description: 'Anime catalog, info, episodes, and streams' },
+      { name: 'Interactions', description: 'Comments, likes, and episode tracking' }
+    ]
   },
-  apis: ['./src/routes/*.js'], // Path to the API docs
+  apis: ['./src/routes/*.js'],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
